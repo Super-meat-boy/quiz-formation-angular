@@ -8,6 +8,6 @@ app.use(express.static('.'));
 // sers à mettre un système de navigation 
 app.use(serveIndex('.', { icons: true }));
 
-app.listen(3000, function () {
+app.listen(3000, () => {
     console.log('Example app listening on port 3000!')
 });
