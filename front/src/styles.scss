@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "../node_modules/normalize.css/normalize.css";
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 body {
   color: inherit;
@@ -10,6 +13,14 @@ body {
   @media screen and (min-width: 900px) {
     font-size: 2vw;
   }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 40em;
+  padding: 0.8em;
 }
 
 a {
