@@ -18,6 +18,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
+
   width: 100%;
   max-width: 40em;
   padding: 0.8em;
@@ -46,6 +47,20 @@ button {
       background-color: #ccc;
     }
   }
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+}
+
+label {
+  padding: 0.5em 0;
+}
+
+input {
+  padding: 0.5em 1em;
+  border: 0.1em solid #ddd;
 }
 
 
