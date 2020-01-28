@@ -1,0 +1,7 @@
+footer {
+  height: 5em;
+  display: flex;
+  align-items: center;
+  background-color: gainsboro;
+  justify-content: center;
+ }
