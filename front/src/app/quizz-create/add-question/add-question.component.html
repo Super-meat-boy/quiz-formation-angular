@@ -1,1 +1,20 @@
-<p>add-question works!</p>
+<main>
+  <h1>Add a question</h1>
+  <form>
+    <label>
+      <div>Question name</div>
+      <textarea rows="3"></textarea>
+    </label>
+    <div class="answers">
+      <label *ngFor="let letter of ['A', 'B', 'C', 'D']">
+        <span>{{ letter }}</span>
+        <input type="text" />
+        <input type="radio" />
+      </label>
+    </div>
+      <div class="buttons">
+        <button>Cancel</button>
+        <button class="primary">Add</button>
+      </div>
+  </form>
+</main>
