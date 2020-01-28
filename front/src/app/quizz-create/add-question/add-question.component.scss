@@ -10,3 +10,9 @@ h1 {
 span {
   width: 2em;
 }
+
+.buttons {
+  display: flex;
+  margin-top: 1em;
+  justify-content: space-between;
+}

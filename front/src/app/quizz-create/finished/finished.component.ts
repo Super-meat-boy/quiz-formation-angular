@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-finished',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinishedComponent implements OnInit {
 
-  constructor() { }
+  faCoffee = faCoffee;
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  ngOnInit() {}
 }

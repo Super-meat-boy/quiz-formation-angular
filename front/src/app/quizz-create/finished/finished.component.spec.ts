@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FinishedComponent } from './finished.component';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 
 describe('FinishedComponent', () => {
   let component: FinishedComponent;
