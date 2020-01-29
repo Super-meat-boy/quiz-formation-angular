@@ -1,1 +1,13 @@
-<p>question works!</p>
+<main>
+  <h1>Quizz : Toto</h1>
+  <h2>Question : 1</h2>
+  <p>Which is the first Super Hero in the world ?</p>
+  <form class="answers">
+    <label *ngFor="let letter of ['A', 'B', 'C', 'D']">
+      <input type="radio" />
+      <span class="letter">{{ letter }}</span>
+      <span class="answer">Spiderman</span>
+    </label>
+    <button class="primary" routerLink="/score">Submit</button>
+  </form>
+</main>
