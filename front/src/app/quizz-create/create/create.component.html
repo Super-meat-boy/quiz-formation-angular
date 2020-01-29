@@ -1,10 +1,10 @@
 <main>
   <h1>Create your Quizz</h1>
-  <form>
+  <form [formGroup]="f" (ngSubmit)="submit()">
     <label>
       <div>Name of the Quizz</div>
-      <input type="text" appAutofocus/>
+      <input type="text" appAutofocus formControlName="name"/>
     </label>
-    <button class="primary" routerLink="/setup">Next</button>
+    <button class="primary" type="submit" [disabled]="f.invalid">Next</button>
   </form>
 </main>
