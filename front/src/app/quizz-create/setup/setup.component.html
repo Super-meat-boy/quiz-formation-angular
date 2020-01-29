@@ -2,5 +2,5 @@
   <h1>Quizz: {{quizzService.current.name}}</h1>
 <h2>Number of questions : {{quizzService.current.questions.length}}</h2>
   <button appAutofocus class="primary" routerLink="/add-question">Add a question</button>
-  <button routerLink="/finished">Finish</button>
+  <button (click)="saveQuizz()">Finish</button>
 </main>

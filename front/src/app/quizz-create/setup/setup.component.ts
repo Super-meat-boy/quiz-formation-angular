@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizzService } from 'src/app/services/quizz.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-setup',
@@ -8,9 +9,15 @@ import { QuizzService } from 'src/app/services/quizz.service';
 })
 export class SetupComponent implements OnInit {
 
-  constructor(public quizzService: QuizzService) { }
+  constructor(public quizzService: QuizzService, private router: Router) { }
 
   ngOnInit() {
   }
+
+  saveQuizz() {
+    console.log('about to save quizz');
+    this.quizzService.saveQuizz();
+    this.router.navigateByUrl('/finished');
+      }
 
 }
