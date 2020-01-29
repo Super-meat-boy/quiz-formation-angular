@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizzService } from 'src/app/services/quizz.service';
+import { Quizz } from 'src/app/entities/quizz';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -7,10 +9,12 @@ import { QuizzService } from 'src/app/services/quizz.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  constructor(public quizzService: QuizzService, private router: Router) {}
 
-  constructor(public quizzService: QuizzService) { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  select(q: Quizz) {
+    this.quizzService.setCurrent(q);
+    this.router.navigateByUrl('/question');
   }
-
 }

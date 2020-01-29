@@ -61,7 +61,12 @@ export class QuizzService {
     return Object.keys(this.quizzMap).length > 0;
   }
 
-  getQuizzList() : Quizz[] {
+  getQuizzList(): Quizz[] {
     return Object.values(this.quizzMap);
+  }
+
+  setCurrent(q: Quizz) {
+    this.current = q;
+    this.saveCurrent();
   }
 }
