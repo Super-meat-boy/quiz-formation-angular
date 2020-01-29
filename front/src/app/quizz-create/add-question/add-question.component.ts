@@ -11,7 +11,7 @@ import { Question } from 'src/app/interface/question';
 })
 export class AddQuestionComponent implements OnInit {
   f = new FormGroup({
-    questionLabel: new FormControl("What's my age again ?", [
+    label: new FormControl("What's my age again ?", [
       Validators.required,
       Validators.maxLength(200)
     ]),

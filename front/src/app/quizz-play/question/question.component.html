@@ -1,12 +1,12 @@
 <main>
-  <h1>Quizz : Toto</h1>
-  <h2>Question : 1</h2>
-  <p>Which is the first Super Hero in the world ?</p>
+  <h1>Quizz : {{quizzService.current.name}}</h1>
+<h2>Question : {{quizzService.progress.questionId +1}}</h2>
+  <p>{{quizzService.current.questions[quizzService.progress.questionId].label}}</p>
   <form class="answers">
     <label *ngFor="let letter of ['A', 'B', 'C', 'D']">
       <input type="radio" />
       <span class="letter">{{ letter }}</span>
-      <span class="answer">Spiderman</span>
+      <span class="answer">{{quizzService.current.questions[quizzService.progress.questionId]['answer'+ letter]}}</span>
     </label>
     <button class="primary" routerLink="/score">Submit</button>
   </form>
