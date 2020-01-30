@@ -1,6 +1,9 @@
 import express from "express";
 import serveIndex from "serve-index";
+import cors from "cors";
 const app = express();
+
+app.use(cors());
 
 // quelque soit le verbe http et le '.' indique le répertoire actuel
 const www = "../front/dist/front";
