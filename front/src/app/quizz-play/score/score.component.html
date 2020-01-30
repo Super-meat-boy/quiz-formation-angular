@@ -1,7 +1,22 @@
 <main>
-  <fa-icon [icon]="faSmileWink"></fa-icon>
-  <h1>WELL DONE</h1>
-  <p>GREAT SUCCESS</p>
+  <ng-container
+    *ngIf="
+      quizzService.progress.score === quizzService.current.questions.length;
+      then bravo;
+      else poo
+    "
+  >
+  </ng-container>
+  <ng-template #bravo>
+    <fa-icon [icon]="faSmileWink"></fa-icon>
+    <h1>GREAT SUCESS</h1>
+  </ng-template>
+  <ng-template #poo>
+    <fa-icon [icon]="faPoo"></fa-icon>
+    <h1>YOU PIECE OF SHIT</h1>
+  </ng-template>
+
+<p>GREAT SUCCESS YOUR SCORE IS : {{quizzService.progress.score}}/{{quizzService.current.questions.length}}</p>
   <button class="primary" routerLink="/">Back to home</button>
 </main>
 
