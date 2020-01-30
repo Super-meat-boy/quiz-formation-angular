@@ -23,7 +23,7 @@ export class TimerComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     console.log('counter', this.counter);
-    this.subscription = interval(1000)*
+    this.subscription = interval(1000)
       .pipe(
         startWith(-1),
         map(n => n + 1),
