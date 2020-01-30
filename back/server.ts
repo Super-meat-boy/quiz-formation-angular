@@ -1,14 +1,16 @@
 import express from 'express';
 import serveIndex from 'serve-index';
 import cors from 'cors';
+import {QuizzMap} from "../front/src/app/interface/quizz-map";
+
 const app = express();
 
 app.use(cors());
 
+let quizzList: QuizzMap;
+
 app.get('/v1/quizz', (req, res, next) => {
-  res.json({
-    toto: 123
-  });
+  res.json(quizzList);
 });
 
 // quelque soit le verbe http et le '.' indique le répertoire actuel
