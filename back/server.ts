@@ -1,18 +1,24 @@
-import express from "express";
-import serveIndex from "serve-index";
-import cors from "cors";
+import express from 'express';
+import serveIndex from 'serve-index';
+import cors from 'cors';
 const app = express();
 
 app.use(cors());
 
+app.get('/v1/quizz', (req, res, next) => {
+  res.json({
+    toto: 123
+  });
+});
+
 // quelque soit le verbe http et le '.' indique le répertoire actuel
-const www = "../front/dist/front";
+const www = '../front/dist/front';
 app.use(express.static(www));
 app.use(serveIndex(www, { icons: true }));
 
 // sers à mettre un système de navigation
-app.use(serveIndex(".", { icons: true }));
+app.use(serveIndex('.', { icons: true }));
 
 app.listen(3000, () => {
-  console.log("Example app listening on port 3000!");
+  console.log('Example app listening on port 3000!');
 });
