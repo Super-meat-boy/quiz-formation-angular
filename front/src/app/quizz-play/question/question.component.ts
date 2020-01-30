@@ -36,4 +36,8 @@ export class QuestionComponent implements OnInit {
     }
     this.f.reset();
   }
+
+  timeout(msg: string) {
+    alert('dring dring' + msg)
+  }
 }
