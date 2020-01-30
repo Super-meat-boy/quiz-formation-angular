@@ -1,22 +1,20 @@
 <main>
-<app-timer [counter]="15" (dringdring)="timeout()"></app-timer>
-<h1>Quizz : {{ quizzService.current.name }}</h1>
+  <app-timer [counter]="5" (dringdring)="timeout($event)"></app-timer>
+  <h1>Quizz: {{ quizzService.current.name }}</h1>
   <h2>Question : {{ quizzService.progress.questionId + 1 }}</h2>
-  <p>
-    {{ quizzService.current.questions[quizzService.progress.questionId].label }}
-  </p>
-  <form [formGroup]="f" (ngSubmit)="submit()" class="answers">
+  <p>{{ quizzService.current.questions[quizzService.progress.questionId].label }}</p>
+  <form [formGroup]="f" (ngSubmit)="submit()">
     <label *ngFor="let letter of ['A', 'B', 'C', 'D']">
-      <input formControlName="givenAnswer" [value]="letter" type="radio" />
+      <input type="radio" formControlName="givenAnswer" [value]="letter" />
       <span class="letter">{{ letter }}</span>
       <span class="answer">{{
-        quizzService.current.questions[quizzService.progress.questionId][
-          'answer' + letter]
+        quizzService.current.questions[quizzService.progress.questionId]['answer' + letter]
       }}</span>
     </label>
-    <button class="primary" [disabled]="f.invalid">Submit</button>
+    <button type="submit" class="primary" [disabled]="f.invalid">
+      Valider
+    </button>
   </form>
 </main>
 
-
-{{f.value | json}}
+{{ f.value | json }}
